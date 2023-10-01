@@ -1,0 +1,114 @@
+<!-- Author: kishnu yadav -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+
+  </style>
+    <script>
+    function addToOutput(value) {
+    var output = document.getElementById("output");
+    if (output.value === '0') {
+        output.value = value;
+    } else {
+        output.value += value;
+    }
+}
+    function setOperator(operator) {
+        var output = document.getElementById("output");
+        output.value += " " + operator + " ";
+    }
+
+    function calculateFactorial() {
+        var output = document.getElementById("output");
+        var num = parseFloat(output.value);
+        if (!isNaN(num)) {
+            var result = 1;
+            for (var i = 2; i <= num; i++) {
+                result *= i;
+            }
+            output.value = result;
+        } else {
+            output.value = "Error";
+        }
+    }
+
+    function calculateSquareRoot() {
+        var output = document.getElementById("output");
+        var num = parseFloat(output.value);
+        if (!isNaN(num) && num >= 0) {
+            var result = Math.sqrt(num);
+            output.value = result;
+        } else {
+            output.value = "Error";
+        }
+    }
+
+    function calculateResult() {
+        var output = document.getElementById("output");
+        try {
+            var result = eval(output.value);
+            output.value = result;
+        } catch (error) {
+            output.value = "Error";
+        }
+    }
+
+    function clearOutput() {
+        var output = document.getElementById("output");
+        output.value = "0";
+    }
+
+
+function playEqualSound() {
+    var equalSound = new Audio('equal.mp3');
+    equalSound.play();
+}
+</script>
+
+  
+</head>
+
+<body>
+   <h1><span class="k">k</span>alculator</h1>
+   <div class="cal" id="kalku">
+       <input type="text" class="output" id="output" value="0" size="30"><br>
+       <input type="button" class="nine" name="nine" value="9" onclick="addToOutput('9'); playEqualSound();"> 
+       <input type="button" class="eight" name="eight" value="8" onclick="addToOutput('8'); playEqualSound();">
+       <input type="button" class="seven" name="seven" value="7" onclick="addToOutput('7'); playEqualSound();">
+       <input type="button" class="divide" name="divide" value="+" onclick="setOperator('+'); playEqualSound();">
+       <input type="button" class="fact" name="fact" value="fact" onclick="calculateFactorial(); playEqualSound();"><br>
+       <!-- first row -->
+       <input type="button" class="six" name="six" value="6" onclick="addToOutput('6'); playEqualSound();">
+       <input type="button" class="five" name="five" value="5" onclick="addToOutput('5'); playEqualSound();">
+       <input type="button" class="four" name="four" value="4" onclick="addToOutput('4'); playEqualSound();">
+       <input type="button" class="mul" name="mul" value="*" onclick="setOperator('*'); playEqualSound();">
+       <input type="button" class="root" name="root" value="root" onclick="calculateSquareRoot(); playEqualSound();"><br>
+       <!-- second row -->
+       <input type="button" class="three" name="three" value="3" onclick="addToOutput('3'); playEqualSound();">
+       <input type="button" class="two" name="two" value="2" onclick="addToOutput('2'); playEqualSound();">
+       <input type="button" class="one" name="one" value="1" onclick="addToOutput('1'); playEqualSound();">
+       <input type="button" class="minus" name="minus" value="-" onclick="setOperator('-'); playEqualSound();">
+       <input type="button" class="divv" name="divv" value="%" onclick="setOperator('%'); playEqualSound();"><br>
+       <!-- third row -->
+       <input type="button" class="zero" name="zero" value="0" onclick="addToOutput('0'); playEqualSound();">
+       <input type="button" class="t-zero" name="t-zero" value="00" onclick="addToOutput('00'); playEqualSound();">
+       <input type="button" class="dot" name="dot" value="." onclick="addToOutput('.'); playEqualSound();">
+       <input type="button" class="equal" name="equal" value="=" onclick="calculateResult(); playEqualSound();">
+       <input type="reset" class="can" name="can" value="Del" onclick="clearOutput(); playEqualSound();"><br>
+       <!-- fourth row -->
+       <br><br>
+       <h5>Designed by:<u>@krrish9783</u></h5>
+   </div>
+
+
+
+
+
+
+</body>
+</html>
