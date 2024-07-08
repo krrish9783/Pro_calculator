@@ -3,8 +3,8 @@
 
 Kalculator is a web-based calculator that provides a realistic and interactive calculator experience. It offers essential arithmetic operations, percentage calculation, factorial, square root, and an engaging design with sound effects.
 
-![Kalculator Screenshot](img/f.png)
-![Kalculator Screenshot](img/s.png)
+![Kalculator Screenshot](img/f.gif)
+![Kalculator Screenshot](img/f.gif)
 
 ## Features
 
